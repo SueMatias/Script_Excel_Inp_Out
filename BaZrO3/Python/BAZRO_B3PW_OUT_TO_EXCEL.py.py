@@ -33,19 +33,32 @@ for Ba in range(1, 8):
             else:
                 print(f'Combinação = {Ba}{Z}{O}')
 
-                B3LYP_D3 = arquivo_excel.active
-                B3LYP_D3.cell(row=2, column=column).value = valor_volume[0]
-                print(B3LYP_D3.cell(row=2, column=column).value)
+                B3PW = arquivo_excel.active
+                if Ba <= 4:
+                    B3PW.cell(row=2, column=column).value = valor_volume[0]
+                    print(B3PW.cell(row=2, column=column).value)
 
-                B3LYP_D3.cell(row=4, column=column).value = valor_parametro[0]
-                print(B3LYP_D3.cell(row=4, column=column).value)
+                    B3PW.cell(row=4, column=column).value = valor_parametro[0]
+                    print(B3PW.cell(row=4, column=column).value)
 
-                B3LYP_D3.cell(row=8, column=column).value = valor_densidade[0]
-                print(B3LYP_D3.cell(row=8, column=column).value)
+                    B3PW.cell(row=6, column=column).value = valor_gap[0]
+                    print(B3PW.cell(row=6, column=column).value)
 
-                B3LYP_D3.cell(row=6, column=column).value = valor_gap[0]
-                print(B3LYP_D3.cell(row=6, column=column).value)
+                    B3PW.cell(row=8, column=column).value = valor_densidade[0]
+                    print(B3PW.cell(row=8, column=column).value)
+                else:
+                    B3PW.cell(row=14, column=column).value = valor_volume[0]
+                    print(B3PW.cell(row=2, column=column).value)
+
+                    B3PW.cell(row=16, column=column).value = valor_parametro[0]
+                    print(B3PW.cell(row=4, column=column).value)
+
+                    B3PW.cell(row=18, column=column).value = valor_gap[0]
+                    print(B3PW.cell(row=6, column=column).value)
+
+                    B3PW.cell(row=20, column=column).value = valor_densidade[0]
+                    print(B3PW.cell(row=8, column=column).value)
 
             column += 1
 
-arquivo_excel.save("BaZrO.xlsx")
+arquivo_excel.save("/home/suellen/Documentos/IC/BaZrO.xlsx")

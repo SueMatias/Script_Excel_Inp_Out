@@ -33,19 +33,32 @@ for Ba in range(1, 8):
             else:
                 print(f'Combinação = {Ba}{Z}{O}')
 
-                B3LYP_D3 = arquivo_excel.active
-                B3LYP_D3.cell(row=2, column=column).value = valor_volume[0]
-                print(B3LYP_D3.cell(row=2, column=column).value)
+                SOGGAXC = arquivo_excel.active
+                if Ba <= 4:
+                    SOGGAXC.cell(row=2, column=column).value = valor_volume[0]
+                    print(SOGGAXC.cell(row=2, column=column).value)
 
-                B3LYP_D3.cell(row=4, column=column).value = valor_parametro[0]
-                print(B3LYP_D3.cell(row=4, column=column).value)
+                    SOGGAXC.cell(row=4, column=column).value = valor_parametro[0]
+                    print(SOGGAXC.cell(row=4, column=column).value)
 
-                B3LYP_D3.cell(row=8, column=column).value = valor_densidade[0]
-                print(B3LYP_D3.cell(row=8, column=column).value)
+                    SOGGAXC.cell(row=6, column=column).value = valor_gap[0]
+                    print(SOGGAXC.cell(row=6, column=column).value)
 
-                B3LYP_D3.cell(row=6, column=column).value = valor_gap[0]
-                print(B3LYP_D3.cell(row=6, column=column).value)
+                    SOGGAXC.cell(row=8, column=column).value = valor_densidade[0]
+                    print(SOGGAXC.cell(row=8, column=column).value)
+                else:
+                    SOGGAXC.cell(row=14, column=column).value = valor_volume[0]
+                    print(SOGGAXC.cell(row=2, column=column).value)
+
+                    SOGGAXC.cell(row=16, column=column).value = valor_parametro[0]
+                    print(SOGGAXC.cell(row=4, column=column).value)
+
+                    SOGGAXC.cell(row=18, column=column).value = valor_gap[0]
+                    print(SOGGAXC.cell(row=6, column=column).value)
+
+                    SOGGAXC.cell(row=20, column=column).value = valor_densidade[0]
+                    print(SOGGAXC.cell(row=8, column=column).value)
 
             column += 1
 
-arquivo_excel.save("BaZrO.xlsx")
+arquivo_excel.save("/home/suellen/Documentos/IC/BaZrO.xlsx")
